@@ -42,8 +42,18 @@ def get_color_choice():
 
 
 # TO-DO(Victoria): function of number of the hexagons, need to check whether data entry is correct, 4 <= N <= 20
-def get_num_hexagons(N):
-    pass
+def get_num_hexagons():
+    try:
+        N = int(input('Пожалуйста, введите количетсво шестиугольников, раполагаемых в ряд: '))
+        while N < 4 or N > 20:
+            print('Оно должно быть от 4 до 20. Пожалуйста, повторите попытку: ')
+            N = int(input())
+        return N
+    except ValueError:
+        print('Оно должно быть от 4 до 20. Пожалуйста, повторите попытку: ')
+        N = get_num_hexagons()
+        return N
+
 
 # TO-DO(Maxim): to draw the lines of hexagons
 # TO-DO(Victoria): to draw the hexagon + code review
