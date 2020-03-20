@@ -2,6 +2,7 @@
 # Developers: Besedina D. (%)
 #             Setskov M. (%)
 #             Moiseenko V.(%)
+# The aim: to write a program for performing two-color paving of the plane with regular hexagons
 
 import turtle
 
