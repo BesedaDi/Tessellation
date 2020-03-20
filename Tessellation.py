@@ -52,7 +52,7 @@ def get_num_hexagons():
         N = get_num_hexagons()
         return N
 
-def draw_hexagon(x, y, side_len, color):
+def draw_hexagon(x, y, side_len, color):    #тут мы рисуем шестиугольник по параметрам, желательно сделать документ-строку(обязательно)!!!!
     turtle.up()
     turtle.setposition(x, y)
     turtle.down()
@@ -70,7 +70,7 @@ def draw_hexagon(x, y, side_len, color):
     turtle.penup()
     
 def main():
-    colors = get_color_choice()
+    colors = get_color_choice()     #здесь мы превращаем цвета на русском в их код !!!!!ОБЯЗАТЕЛЬНО ПРОВЕРИТЬ ПРОГРАММУ ПО РАЗНЫМ ЦВЕТАМ, Я НЕ ТЕСТИЛ СО ВСЕМИ КОДИРОВКАМИ.
     color1 = colors[0]
     color2 = colors[1]
 
@@ -100,7 +100,7 @@ def main():
     if color2 == 'синий':
         color2 == '#00FFFF'
         
-    n = get_num_hexagons()
+    n = get_num_hexagons()      #здесь мы считаем длиину стороны side_len, координаты старта и задаем некоторые параметры для использования в циклах
     a = (500 / n) / 2
     b = math.tan(0.523599) * a
     side_len = math.sqrt(a ** 2 + b ** 2)
@@ -109,7 +109,7 @@ def main():
     sh = 0
     ch = 0
 
-    for lines in range(n):
+    for lines in range(n):      #здесь мы делаем полностью тесселяцию
         for column in range(n):
             if sh % 2 == 0:
                 draw_hexagon(x, y, side_len, color1)
@@ -128,4 +128,6 @@ def main():
         turtle.up()
         turtle.setposition(x, y)
         turtle.down()
-turtle.done()
+    turtle.done()
+
+main()
