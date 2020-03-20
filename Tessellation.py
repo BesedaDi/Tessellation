@@ -17,26 +17,26 @@ def get_color_choice():
     print('  желтый')
     print('  пурпурный')
     print('  розовый')
-    color1 = input('Пожалуйста, введите первый цвет:')
+    color1 = input('Пожалуйста, введите первый цвет:').lower().strip()
     if color1 == 'красный' or color1 == 'синий' or color1 == 'зеленый' or color1 == 'желтый' or color1 == 'пурпурный' or color1 == 'розовый':
-        color2 = input('Пожалуйста, введите второй цвет:')
+        color2 = input('Пожалуйста, введите второй цвет:').lower().strip()
         if color2 == 'красный' or color2 == 'синий' or color2 == 'зеленый' or color2 == 'желтый' or color2 == 'пурпурный' or color2 == 'розовый':
             return color1, color2
         while color2 != 'красный' or color2 != 'синий' or color2 != 'зеленый' or color2 != 'желтый' or color2 != 'пурпурный' or color2 != 'розовый':
             print("'" + color2 + "'", 'не является верным значением.')
-            color2 = input('Пожалуйста, введите цвет:')
+            color2 = input('Пожалуйста, введите цвет:').lower().strip()
             if color2 == 'красный' or color2 == 'синий' or color2 == 'зеленый' or color2 == 'желтый' or color2 == 'пурпурный' or color2 == 'розовый':
                 return color1, color2
     while color1 != 'красный' or color1 != 'синий' or color1 != 'зеленый' or color1 != 'желтый' or color1 != 'пурпурный' or color1 != 'розовый':
         print("'" + color1 + "'", 'не является верным значением.')
-        color1 = input('Пожалуйста, введите цвет:')
+        color1 = input('Пожалуйста, введите цвет:').lower().strip()
         if color1 == 'красный' or color1 == 'синий' or color1 == 'зеленый' or color1 == 'желтый' or color1 == 'пурпурный' or color1 == 'розовый':
-            color2 = input('Пожалуйста, введите второй цвет:')
+            color2 = input('Пожалуйста, введите второй цвет:').lower().strip()
             if color2 == 'красный' or color2 == 'синий' or color2 == 'зеленый' or color2 == 'желтый' or color2 == 'пурпурный' or color2 == 'розовый':
                 return color1, color2
             while color2 != 'красный' or color2 != 'синий' or color2 != 'зеленый' or color2 != 'желтый' or color2 != 'пурпурный' or color2 != 'розовый':
                 print("'" + color2 + "'", 'не является верным значением.')
-                color2 = input('Пожалуйста, введите цвет:')
+                color2 = input('Пожалуйста, введите цвет:').lower().strip()
                 if color2 == 'красный' or color2 == 'синий' or color2 == 'зеленый' or color2 == 'желтый' or color2 == 'пурпурный' or color2 == 'розовый':
                     return color1, color2
 
