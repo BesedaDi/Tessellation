@@ -1,6 +1,6 @@
 # Case-study #5 "Tessellation"
 # Developers: Besedina D. (%)
-#             Setskov M. (%)
+#             Setskov M. (75%)
 #             Moiseenko V.(%)
 # The aim: to write a program for performing two-color paving of the plane with regular hexagons
 
