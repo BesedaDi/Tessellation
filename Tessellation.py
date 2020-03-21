@@ -1,14 +1,17 @@
 # Case-study #5 "Tessellation"
 # Developers: Besedina D. (%)
 #             Setskov M. (75%)
-#             Moiseenko V.(%)
+#             Moiseenko V.(49%)
 # The aim: to write a program for performing two-color paving of the plane with regular hexagons
 
 import turtle
 import math
 
-# TO-DO(Diana): function of choosing two colors from at least six suggested ones, reentry if the color's name is wrong
 def get_color_choice():
+    """
+    Choosing the color of filling the hexagons
+    :return : two colors of hexagons
+    """
     print('Допустимые цвета заливки:')
     print('  красный')
     print('  синий')
@@ -16,9 +19,9 @@ def get_color_choice():
     print('  желтый')
     print('  пурпурный')
     print('  розовый')
-    color1 = input('Пожалуйста, введите первый цвет:').lower().strip()
+    color1 = input('Пожалуйста, введите первый цвет: ').lower().strip()
     if color1 == 'красный' or color1 == 'синий' or color1 == 'зеленый' or color1 == 'желтый' or color1 == 'пурпурный' or color1 == 'розовый':
-        color2 = input('Пожалуйста, введите второй цвет:').lower().strip()
+        color2 = input('Пожалуйста, введите второй цвет: ').lower().strip()
         if color2 == 'красный' or color2 == 'синий' or color2 == 'зеленый' or color2 == 'желтый' or color2 == 'пурпурный' or color2 == 'розовый':
             return color1, color2
         while color2 != 'красный' or color2 != 'синий' or color2 != 'зеленый' or color2 != 'желтый' or color2 != 'пурпурный' or color2 != 'розовый':
@@ -39,8 +42,11 @@ def get_color_choice():
                 if color2 == 'красный' or color2 == 'синий' or color2 == 'зеленый' or color2 == 'желтый' or color2 == 'пурпурный' or color2 == 'розовый':
                     return color1, color2
 
-# TO-DO(Victoria): function of number of the hexagons, need to check whether data entry is correct, 4 <= N <= 20
 def get_num_hexagons():
+    """
+    Getting number of hexagons
+    :return: number of hexagons
+    """
     try:
         N = int(input('Пожалуйста, введите количетсво шестиугольников, раполагаемых в ряд: '))
         while N < 4 or N > 20:
@@ -52,7 +58,14 @@ def get_num_hexagons():
         N = get_num_hexagons()
         return N
 
-def draw_hexagon(x, y, side_len, color):    #тут мы рисуем шестиугольник по параметрам, желательно сделать документ-строку(обязательно)!!!!
+def draw_hexagon(x, y, side_len, color):
+    """
+    Drawing the hexagon
+    : x : x coordinate
+    : y : y coordinate
+    : side_len : the side length
+    : color : the color of the filling of hexagon
+    """
     turtle.up()
     turtle.setposition(x, y)
     turtle.down()
@@ -70,7 +83,12 @@ def draw_hexagon(x, y, side_len, color):    #тут мы рисуем шести
     turtle.penup()
     
 def main():
-    colors = get_color_choice()     #здесь мы превращаем цвета на русском в их код !!!!!ОБЯЗАТЕЛЬНО ПРОВЕРИТЬ ПРОГРАММУ ПО РАЗНЫМ ЦВЕТАМ, Я НЕ ТЕСТИЛ СО ВСЕМИ КОДИРОВКАМИ.
+    """
+    Changing the name of colors in Russian into the code for turtle
+    Counting the side of hexagon, the start coordinates and setting parametrs for further cycles
+    Doing the tessellation
+    """
+    colors = get_color_choice()
     color1 = colors[0]
     color2 = colors[1]
 
@@ -99,8 +117,8 @@ def main():
         color2 == '#FF0000'
     if color2 == 'синий':
         color2 == '#00FFFF'
-        
-    n = get_num_hexagons()      #здесь мы считаем длиину стороны side_len, координаты старта и задаем некоторые параметры для использования в циклах
+
+    n = get_num_hexagons()
     a = (500 / n) / 2
     b = math.tan(0.523599) * a
     side_len = math.sqrt(a ** 2 + b ** 2)
@@ -109,7 +127,7 @@ def main():
     sh = 0
     ch = 0
 
-    for lines in range(n):      #здесь мы делаем полностью тесселяцию
+    for lines in range(n):
         for column in range(n):
             if sh % 2 == 0:
                 draw_hexagon(x, y, side_len, color1)
